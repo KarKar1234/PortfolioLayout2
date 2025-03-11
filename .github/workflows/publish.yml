@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout 🛎️
@@ -31,16 +31,12 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
 
       - name: Upload artifact 📡
         uses: actions/upload-artifact@v4
         with:
           path: ./out
-       
-      - name: unzip artifact for deployment
-        run: unzip release.zip
+      
 
   deploy:
     environment:
