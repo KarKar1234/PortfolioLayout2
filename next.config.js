@@ -26,7 +26,7 @@ console.warn(
 )
 
 const nextConfig = {
-  basePath: basePath,
+  basePath: "/portfolio",
   output: "export",
   reactStrictMode: true,
   assetPrefix: basePath,
